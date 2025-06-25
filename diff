@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Unipet NFT Game</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+      background: linear-gradient(to right, #ffecd2, #fcb69f);
+    }
+    h1 {
+      font-size: 40px;
+      color: #333;
+    }
+    p {
+      font-size: 18px;
+      color: #555;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 15px 25px;
+      font-size: 16px;
+      margin-top: 30px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <h1>🐾 Chào mừng đến với Unipet!</h1>
+  <p>Game nuôi thú NFT với cấp bậc: Common, Uncommon, Rare...<br/>
+     Tăng cấp để mở chế độ PvP / PvE!</p>
+  <button onclick="connectWallet()">🔗 Kết nối ví Metamask</button>
+
+  <script>
+    async function connectWallet() {
+      if (window.ethereum) {
+        try {
+          const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+          alert('Đã kết nối ví: ' + accounts[0]);
+        } catch (error) {
+          alert('Lỗi kết nối ví!');
+        }
+      } else {
+        alert('Vui lòng cài đặt Metamask!');
+      }
+    }
+  </script>
+</body>
+</html>
